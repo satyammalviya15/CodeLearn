@@ -10,15 +10,46 @@ import {
   UserButton,
 } from "@clerk/clerk-react";
 import { AppContext } from "../../context/AppContext";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 function Navbar() {
 
-  const{navigate,isEducator}=useContext(AppContext)
+  const{navigate,isEducator,backendUrl,setIsEducator,getToken}=useContext(AppContext)
 
   const isCourseListPage = location.pathname.includes("/course-list");
 
   const { openSignIn } = useClerk();
   const { user } = useUser();
+
+  const becomeEducator = async () => {
+    if (isEducator) {
+      navigate("/educator");
+      return;
+    }
+
+    toast.info("This feature is only for The Selected Users. Please contact the admin for more information.");
+    // try{
+    //   if(isEducator){
+    //     navigate('/educator')
+    //     return;
+    // }
+    // const token = await getToken();
+    // const {data} = await axios.get(backendUrl+'/api/educator/update-role', {
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //   },
+    // });
+    // if (data.success) {
+    //   setIsEducator(true);
+    //   toast.success(data.message ||"You are now an educator!");
+    // } else {
+    //   toast.error(data.message || "Failed to update role.");
+    // }
+    // } catch (error) {
+    //   toast.error(error.message);
+    // }
+  }
 
   return (
     <div
@@ -35,7 +66,7 @@ function Navbar() {
         <div className="flex items-center gap-5">
           {user && (
             <>
-              <button onClick={()=>{navigate('/educator')}}>{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>|{" "}
+              <button onClick={becomeEducator}>{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>|{" "}
               <Link to="/my-enrollments">My Enrollments</Link>
             </>
           )}
@@ -56,7 +87,7 @@ function Navbar() {
         <div className="flex items-center gap-1 sm:gap-2 max-sm:text-xs">
           {user && (
             <>
-              <button onClick={()=>{navigate('/educator')}}>{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>|{" "}
+              <button onClick={becomeEducator}>{isEducator ? 'Educator Dashboard' : 'Become Educator'}</button>|{" "}
               <Link to="/my-enrollments">My Enrollments</Link>
             </>
           )}
