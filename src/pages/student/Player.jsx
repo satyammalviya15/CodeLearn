@@ -11,6 +11,15 @@ import { toast } from "react-toastify";
 import Loading from "../../components/student/Loading";
 
 const Player = () => {
+  const extractYouTubeID = (url) => {
+  if (!url) return null;
+
+  const regex =
+    /(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?|shorts)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+  const match = url.match(regex);
+  return match && match[1] ? match[1] : null;
+};
+
   const {
     enrolledCourses,
     calculateChapterTime,
@@ -185,12 +194,13 @@ const Player = () => {
                           <div className="flex gap-2">
                             {lecture.lectureUrl && (
                               <p
-                                onClick={() =>
+                                onClick={() =>{
+                                  window.scrollTo({ top: 0, behavior: "smooth" })
                                   setPlayerData({
                                     ...lecture,
                                     chapter: index + 1,
                                     lecture: i + 1,
-                                  })
+                                  })}
                                 }
                                 className="text-blue-500 cursor-pointer"
                               >
@@ -224,7 +234,7 @@ const Player = () => {
           {playerData ? (
             <div>
               <YouTube
-                videoId={playerData.lectureUrl.split("/").pop()}
+                videoId={extractYouTubeID(playerData.lectureUrl)}
                 iframeClassName="w-full aspect-video"
               />
               <div className="flex justify-between items-center mt-1">

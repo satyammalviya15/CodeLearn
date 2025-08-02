@@ -9,7 +9,7 @@ function CourseCard({course}) {
 
   return (
     <Link to={'/course/' + course._id} onClick={()=>scrollTo(0,0)} className='border border-gray-500/30 pb-6 overflow-hidden rounded-lg'>
-      <img className='w-full' src={course.courseThumbnail} alt=""/>
+      <img className='w-full' src={course.courseThumbnail} alt={course.courseTitle || "Course Thumbnail"}/>
       <div className='p-3 text-left'>
         <h3 className='text-base font-semibold'>{course.courseTitle}</h3>
         <p className='text-gray-500'>{course.educator.name}</p>
@@ -17,7 +17,7 @@ function CourseCard({course}) {
           <p>{calculateRating(course)}</p>
           <div className='flex'>
             {[...Array(5)].map((_,i)=>(
-          <img key={i} src={i < Math.floor(calculateRating(course)) ? assets.star :assets.star_blank} alt='' className='w-3.5 h-3.5'/>
+          <img key={i} src={i < Math.floor(calculateRating(course)) ? assets.star :assets.star_blank} alt={i < Math.floor(calculateRating(course)) ? "Filled star" : "Empty star"} className='w-3.5 h-3.5'/>
           ))}
           </div>
           <p className='text-gray-500'>{course.courseRatings.length}</p>
