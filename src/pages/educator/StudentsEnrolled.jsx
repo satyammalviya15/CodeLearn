@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { dummyStudentEnrolled } from "../../assets/assets";
+import { useContext, useEffect, useState } from "react";
 import Loading from "../../components/student/Loading";
 import { AppContext } from "../../context/AppContext";
 import axios from "axios";

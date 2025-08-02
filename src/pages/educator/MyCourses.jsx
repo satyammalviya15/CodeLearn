@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { AppContext } from '../../context/AppContext';
 import Loading from '../../components/student/Loading';
 import axios from 'axios';
