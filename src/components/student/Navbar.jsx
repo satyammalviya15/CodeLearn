@@ -28,27 +28,27 @@ function Navbar() {
       return;
     }
 
-    toast.info("This feature is only for The Selected Users. Please contact the admin for more information.");
-    // try{
-    //   if(isEducator){
-    //     navigate('/educator')
-    //     return;
-    // }
-    // const token = await getToken();
-    // const {data} = await axios.get(backendUrl+'/api/educator/update-role', {
-    //   headers: {
-    //     Authorization: `Bearer ${token}`,
-    //   },
-    // });
-    // if (data.success) {
-    //   setIsEducator(true);
-    //   toast.success(data.message ||"You are now an educator!");
-    // } else {
-    //   toast.error(data.message || "Failed to update role.");
-    // }
-    // } catch (error) {
-    //   toast.error(error.message);
-    // }
+    // toast.info("This feature is only for The Selected Users. Please contact the admin for more information.");
+    try{
+      if(isEducator){
+        navigate('/educator')
+        return;
+    }
+    const token = await getToken();
+    const {data} = await axios.get(backendUrl+'/api/educator/update-role', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (data.success) {
+      setIsEducator(true);
+      toast.success(data.message ||"You are now an educator!");
+    } else {
+      toast.error(data.message || "Failed to update role.");
+    }
+    } catch (error) {
+      toast.error(error.message);
+    }
   }
 
   return (

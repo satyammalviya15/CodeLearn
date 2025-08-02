@@ -66,7 +66,6 @@ const CourseDetails = () => {
       if (data.success) {
         const {sessionUrl} = data;
         window.location.href = sessionUrl;
-        toast.success("You have successfully enrolled in the course!");
       } else {
         toast.error(data.message || "Failed to enroll in the course.");
       }
