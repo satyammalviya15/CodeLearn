@@ -1,11 +1,13 @@
 import React from 'react'
 import { assets } from '../../assets/assets';
+import logo from "../../assets/newlogo.png"
+
 
 const Footer = () => {
   return (
     <footer className='flex md:flex-row flex-col-reverse items-center justify-between text-left w-full px-8 border-t'>
       <div className='flex items-center gap-4'>
-        <img className='hidden md:block w-20' src={assets.logo}/>
+        <img className='hidden md:block w-30' src={logo}/>
           <div className='hidden md:block h-7 w-px bg-gray-500/60'>
 
           </div>

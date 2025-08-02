@@ -12,6 +12,7 @@ import {
 import { AppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
 import axios from "axios";
+import logo from "../../assets/newlogo.png"
 
 function Navbar() {
 
@@ -58,9 +59,9 @@ function Navbar() {
       }`}
     >
       <img onClick={()=>navigate('/')}
-        src={assets.logo}
+        src={logo}
         alt="Logo"
-        className="w-28 lg:w-32 cursor-pointer"
+        className="w-45 lg:w-45 cursor-pointer"
       />
       <div className="hidden md:flex items-center gap-5 text-gray-500">
         <div className="flex items-center gap-5">

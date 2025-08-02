@@ -2,6 +2,7 @@ import React from 'react'
 import { assets, dummyEducatorData } from '../../assets/assets'
 import { UserButton,useUser } from '@clerk/clerk-react'
 import { Link } from 'react-router-dom';
+import logo from "../../assets/newlogo.png"
 
 const Navbar = () => {
 
@@ -11,7 +12,7 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between px-4 md:px-8 border-b border-gray-500 py-3'>
       <Link to='/'>
-      <img src={assets.logo} alt="Logo" className='w-28 lg:w-32' />
+      <img src={logo} alt="Logo" className='w-40 lg:w-45' />
       </Link>
       <div className='flex items-center gap-5 text-gray-500 relative'>
       <p>Hi! {user ? user.fullName : 'Developers'}</p>
