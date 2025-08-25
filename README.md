@@ -1,12 +1,53 @@
-# React + Vite
+![](./src/assets/newlogo.png)
+# CodeLearn LMS Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Learning Management System (LMS) built with **React**, **Vite**, **TailwindCSS**, and **Clerk authentication**.  
 
-Currently, two official plugins are available:
+## Get Started 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> [<img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/React/react3.svg">]()
+> [<img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/Express/express2.svg">]()
+> [<img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/MongoDB/mongodb2.svg">]()
+> [<img src="https://ziadoua.github.io/m3-Markdown-Badges/badges/NodeJS/nodejs2.svg">]()
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Screens
+> ![Logo](./src/assets/D1.png)
+> ![Logo](./src/assets/D2.png)
+> ![Logo](./src/assets/D3.png)
+> ![Logo](./src/assets/D4.png)
+> ![Logo](./src/assets/D5.png)
+
+
+## 🚀 Features
+
+- **User Authentication** via [Clerk](https://clerk.dev/)  
+- **Modern UI** with TailwindCSS 4  
+- **Rich Text Editor** using Quill  
+- **Video Lessons** via React YouTube  
+- **Progress Tracking** with rc-progress  
+- **Notifications** using React Toastify  
+- **Fast development with Vite**  
+- **Fully modular components** for scalability  
+
+---
+
+## 📂 Tech Stack
+
+**Frontend:** React 19, Vite 7  
+**Backend:** MongoDB, Express, JWT
+**Styling:** TailwindCSS 4, UnoCSS, PostCSS  
+**Auth:** Clerk  
+**Editor:** Quill  
+**Other Utilities:** Axios, humanize-duration, uniqid  
+
+---
+
+## 🛠 Installation
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/satyammalviya15/codelearn.git
+cd codelearn
+npm install
