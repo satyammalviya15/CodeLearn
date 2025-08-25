@@ -1,4 +1,3 @@
-![](./src/assets/newlogo.png)
 # CodeLearn LMS Platform
 
 A modern Learning Management System (LMS) built with **React**, **Vite**, **TailwindCSS**, and **Clerk authentication**.  
